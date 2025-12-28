@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Игра – Учим думи с картинки</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="logo-area">
+        <img src="assets/logo.png" alt="Znaiko Logo">
+        <div>
+            <h1>Znaiko</h1>
+            <p>Учим думи с картинки</p>
+        </div>
+    </div>
+    <a href="index.html"><button class="back-btn">⬅ Начало</button></a>
+</header>
+
+<main class="content">
+
+    <!-- МЕНЮ ЗА ИЗБОР НА БУКВА -->
+    <div id="letter-menu" class="letter-menu">
+        <h2>Избери буква</h2>
+        <div id="letters"></div>
+    </div>
+
+    <!-- ГЛАВЕН ПРОЗОРЕЦ ЗА ИГРА -->
+<div class="game-wrapper">
+    <div id="letter-display" class="letter-display">
+        <!-- Голямата буква ще се показва тук -->
+    </div>
+    
+    <div id="game-area" class="game-area" style="display:none;">
+        <!-- Картинки ще се добавят чрез JS -->
+    </div>
+</div>
+
+<button id="bravo-btn" class="bravo-btn" style="display:none;">Браво!</button>
+
+</main>
+
+<!-- Модално за информация -->
+<div id="info-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeInfo()">×</span>
+        <p id="info-text"></p>
+    </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

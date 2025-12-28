@@ -1,0 +1,694 @@
+/* Основен фон и текст */
+body {
+    margin: 20px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #FFF4E1 0%, #FFE8CC 100%);
+    color: #333;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Декоративни елементи във фона */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255, 214, 61, 0.15) 0%, transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(255, 107, 107, 0.15) 0%, transparent 25%),
+        radial-gradient(circle at 40% 80%, rgba(77, 150, 255, 0.1) 0%, transparent 30%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Хедър */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #FFD93D 0%, #FFC107 100%);
+    padding: 15px 30px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    border-bottom: 6px solid #FF6B6B;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px; /* Разстояние от долу */
+}
+
+/* Декоративна ивица на хедъра */
+.main-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: repeating-linear-gradient(
+        45deg,
+        #FF6B6B,
+        #FF6B6B 12px,
+        #4D96FF 12px,
+        #4D96FF 24px
+    );
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-area img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 4px solid #FF6B6B;
+    background: white;
+    padding: 5px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.logo-area img:hover {
+    transform: rotate(20deg) scale(1.1);
+}
+
+.logo-area h1 {
+    margin: 0;
+    color: #FF6B6B;
+    font-size: 2.5rem;
+    text-shadow: 3px 3px 0 #FFD93D;
+    letter-spacing: 1.5px;
+}
+
+.logo-area p {
+    margin: 8px 0 0 0;
+    color: #4D96FF;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 0 white;
+}
+
+/* Бутон за назад */
+.back-btn {
+    padding: 14px 28px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #4D96FF 0%, #6BCB77 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Comic Sans MS', cursive;
+    border: 3px solid white;
+}
+
+.back-btn:hover {
+    transform: translateY(-5px) scale(1.08);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.back-btn:active {
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Контейнер за основното съдържание */
+.content {
+    padding: 0 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Меню за избор на буква */
+.letter-menu {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 60px; /* Увеличено разстояние до основното поле */
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 35px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border: 4px solid #FFD93D;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.letter-menu h2 {
+    color: #FF6B6B;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    text-shadow: 4px 4px 0 #FFD93D;
+    position: relative;
+    display: inline-block;
+    padding: 0 60px;
+}
+
+.letter-menu h2::before,
+.letter-menu h2::after {
+    content: '✨';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+}
+
+.letter-menu h2::before {
+    left: 0;
+}
+
+.letter-menu h2::after {
+    right: 0;
+}
+
+#letters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 25px;
+}
+
+#letters button {
+    font-size: 2.3rem;
+    width: 75px;
+    height: 75px;
+    margin: 0;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #FF6B6B, #4D96FF);
+    border: 5px solid white;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 
+        0 8px 20px rgba(0,0,0,0.2),
+        inset 0 0 15px rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+#letters button:hover {
+    transform: translateY(-8px) scale(1.15);
+    box-shadow: 
+        0 15px 30px rgba(0,0,0,0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.5);
+    background: linear-gradient(145deg, #4D96FF, #FF6B6B);
+}
+
+#letters button:active {
+    transform: translateY(-4px) scale(1.1);
+}
+
+/* НОВО ПОДРЕДБА: Игрова зона с буквата ВЛЯВО */
+.game-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    margin: 0 auto 50px auto; /* Разстояние до бутона Браво */
+    max-width: 1900px;
+    padding: 0 20px;
+    animation: slideIn 0.6s ease-out;
+    min-height: 550px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Показване на буквата - СЕГА ВЛЯВО */
+.letter-display {
+    width: 200px;
+    height: 550px;
+    background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 100%);
+    border-radius: 35px;
+    cursor: pointer;              /* ръчичка */
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12rem;
+    color: white;
+    font-weight: bold;
+    user-select: none;
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.2),
+        inset 0 0 30px rgba(255, 255, 255, 0.4);
+    text-shadow: 
+        4px 4px 0 rgba(0,0,0,0.2),
+        -2px -2px 0 rgba(255, 255, 255, 0.3);
+    animation: float 3s ease-in-out infinite;
+    overflow: hidden;
+    flex-shrink: 0;
+    order: 1;
+     position: relative;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0) rotate(0deg); 
+    }
+    50% { 
+        transform: translateY(-15px) rotate(2deg); 
+    }
+}
+
+/* Декорация на буквата */
+.letter-display::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 3px dashed rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    pointer-events: none;
+}
+
+/* Основна игрална зона - СЕГА ВДЯСНО */
+.game-area {
+    flex: 1;
+    min-width: 600px;
+    height: 550px;
+    background: linear-gradient(135deg, #FFEEAD 0%, #FFD93D 100%);
+    border-radius: 35px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 20px 45px rgba(0,0,0,0.25),
+        inset 0 0 30px rgba(255, 255, 255, 0.6);
+    border: 6px solid #FF6B6B;
+    padding: 20px;
+    order: 2;
+}
+
+/* Декоративни звездички в ъглите */
+.game-area::before,
+.game-area::after {
+    content: '★';
+    position: absolute;
+    color: #FF6B6B;
+    font-size: 2.5rem;
+    z-index: 1;
+    animation: spin 10s linear infinite;
+}
+
+.game-area::before {
+    top: 15px;
+    left: 15px;
+}
+
+.game-area::after {
+    bottom: 15px;
+    right: 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Обекти в играта */
+.game-object {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    cursor: grab;
+    border-radius: 25px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 
+        0 12px 25px rgba(0,0,0,0.25),
+        inset 0 0 20px rgba(255, 255, 255, 0.9);
+    background: white;
+    border: 5px solid transparent;
+    padding: 6px;
+    z-index: 2;
+}
+
+.game-object:hover {
+    transform: scale(1.08) rotate(5deg);
+    border-color: #4D96FF;
+    box-shadow: 
+        0 18px 35px rgba(0,0,0,0.35),
+        inset 0 0 25px rgba(255, 255, 255, 1);
+    z-index: 3;
+}
+
+.game-object:active {
+    cursor: grabbing;
+    transform: scale(1.12) rotate(10deg);
+    border-color: #FF6B6B;
+}
+
+.game-object img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    background: linear-gradient(135deg, #f5f5f5, #ffffff);
+}
+
+/* Бутон Браво! */
+.bravo-btn {
+    display: block;
+    margin: 0 auto 150px auto; /* Голямо разстояние до футъра */
+    padding: 25px 50px;
+    background: linear-gradient(135deg, #6BCB77 0%, #4D96FF 100%);
+    border: none;
+    border-radius: 40px;
+    font-size: 2rem;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    transition: all 0.4s ease;
+    font-family: 'Comic Sans MS', cursive;
+    position: relative;
+    overflow: hidden;
+    min-width: 250px;
+    border: 4px solid white;
+    animation: pulseGlow 2s infinite;
+    
+}
+
+@keyframes pulseGlow {
+    0%, 100% { 
+        box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    }
+    50% { 
+        box-shadow: 0 15px 45px rgba(107, 203, 119, 0.4);
+    }
+}
+
+.bravo-btn:hover {
+    transform: translateY(-8px) scale(1.08);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+    background: linear-gradient(135deg, #4D96FF 0%, #6BCB77 100%);
+}
+
+/* Модално прозорец */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(10px);
+    animation: modalFadeIn 0.4s ease;
+}
+
+@keyframes modalFadeIn {
+    from { 
+        opacity: 0;
+        backdrop-filter: blur(0);
+    }
+    to { 
+        opacity: 1;
+        backdrop-filter: blur(10px);
+    }
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #FFF4E1 0%, #FFEEAD 100%);
+    margin: 15% auto;
+    padding: 40px;
+    border-radius: 40px;
+    width: 85%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 
+        0 30px 60px rgba(0,0,0,0.4),
+        inset 0 0 40px rgba(255, 255, 255, 0.8);
+    border: 6px solid #FFD93D;
+    position: relative;
+    animation: modalPopIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalPopIn {
+    0% { 
+        transform: scale(0.3) rotate(-15deg);
+        opacity: 0;
+    }
+    100% { 
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.modal-content .close {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #FF6B6B;
+    transition: all 0.3s ease;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.modal-content .close:hover {
+    transform: rotate(180deg) scale(1.2);
+    background: #FF6B6B;
+    color: white;
+}
+
+#info-text {
+    font-size: 1.6rem;
+    color: #333;
+    line-height: 1.7;
+    margin: 30px 0;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    border-left: 8px solid #4D96FF;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Конфети ефект */
+/* Анимация за падащи конфети - по-реалистична */
+.confetti {
+    pointer-events: none;
+    position: absolute;
+    z-index: 9999;
+    box-shadow: 
+        0 2px 4px rgba(0,0,0,0.2),
+        inset 0 0 2px rgba(255,255,255,0.5);
+}
+
+/* Специални ефекти за различните форми */
+.confetti.triangle {
+    background-color: transparent !important;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid currentColor;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+.confetti.star::before {
+    content: '★';
+    color: inherit;
+    font-size: inherit;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes confettiFall {
+    0% { 
+        transform: translateY(-100px) rotate(0deg); 
+        opacity: 1;
+    }
+    100% { 
+        transform: translateY(100vh) rotate(720deg); 
+        opacity: 0;
+    }
+}
+
+/* Responsive дизайн */
+@media (max-width: 1200px) {
+    .game-wrapper {
+        max-width: 95%;
+        gap: 30px;
+    }
+    
+    .letter-display {
+        width: 180px;
+        height: 500px;
+        font-size: 10rem;
+    }
+    
+    .game-area {
+        height: 500px;
+    }
+}
+
+@media (max-width: 992px) {
+    .game-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .letter-display {
+        width: 180px;
+        height: 180px;
+        font-size: 8rem;
+        order: -1;
+        margin-bottom: 30px;
+    }
+    
+    .game-area {
+        width: 95%;
+        height: 450px;
+    }
+    
+    .letter-menu h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 25px 20px;
+        margin-bottom: 30px;
+    }
+    
+    .logo-area h1 {
+        font-size: 2rem;
+    }
+    
+    .back-btn {
+        width: 90%;
+        max-width: 300px;
+    }
+    
+    .letter-menu {
+        padding: 20px;
+        margin: 30px auto 40px auto;
+    }
+    
+    #letters button {
+        width: 65px;
+        height: 65px;
+        font-size: 2rem;
+    }
+    
+    .game-area {
+        height: 400px;
+    }
+    
+    .game-object {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .bravo-btn {
+        margin: 0 auto 60px auto;
+        padding: 20px 40px;
+        font-size: 1.8rem;
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .letter-display {
+        width: 140px;
+        height: 140px;
+        font-size: 6rem;
+    }
+    
+    .game-area {
+        height: 350px;
+    }
+    
+    .game-object {
+        width: 85px;
+        height: 85px;
+    }
+    
+    #letters button {
+        width: 55px;
+        height: 55px;
+        font-size: 1.7rem;
+    }
+    
+    .letter-menu h2 {
+        font-size: 2rem;
+        padding: 0 40px;
+    }
+    
+    .letter-menu h2::before,
+    .letter-menu h2::after {
+        font-size: 1.8rem;
+    }
+    
+    .modal-content {
+        padding: 25px;
+        margin: 20% auto;
+        width: 90%;
+    }
+    
+    #info-text {
+        font-size: 1.4rem;
+        padding: 20px;
+    }
+}
+
+/* Допълнителни декорации за детски стил */
+@keyframes rainbowBorder {
+    0% { border-color: #FF6B6B; }
+    25% { border-color: #FFD93D; }
+    50% { border-color: #6BCB77; }
+    75% { border-color: #4D96FF; }
+    100% { border-color: #FF6B6B; }
+}
+
+.game-area:hover {
+    animation: rainbowBorder 3s infinite;
+}
+
+/* Анимация при зареждане */
+@keyframes gentleShake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    75% { transform: rotate(-2deg); }
+}
+
+.game-wrapper {
+    animation: gentleShake 0.5s ease;
+}

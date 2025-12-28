@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Znaiko – Играя и уча</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="logo-area">
+        <img src="assets/logo.png" alt="Znaiko Logo">
+        <div>
+            <h1>Znaiko</h1>
+            <p>Играя • Уча • Откривам</p>
+        </div>
+    </div>
+
+    <div class="clock">
+        <div class="clock-circle">
+            <span id="clock">00:00</span>
+        </div>
+    </div>
+</header>
+
+<section class="slider">
+    <div class="slider-container">
+        <img id="slider-image" src="assets/elephant_slider.png" alt="slider">
+
+    </div>
+</section>
+
+<main class="content">
+    <section class="games">
+        <div class="game-card">
+            <img src="assets/game1.png" alt="Игра">
+            <a href="game.html"><button>🎮 Играй</button></a>
+            <p>Учим думи с картинки и звук</p>
+            <button class="info-btn" onclick="openInfo('info1')">ℹ Информация</button>
+        </div>
+
+        <div class="game-card">
+            <img src="assets/game2.png" alt="Игра">
+            <button onclick="startGame()">🎮 Играй</button>
+            <p>Игри за мислене и внимание.</p>
+            <button class="info-btn" onclick="openInfo('info2')">ℹ Информация</button>
+        </div>
+    </section>
+</main>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeInfo()">×</span>
+        <p id="modal-text"></p>
+    </div>
+</div>
+
+<footer>
+    <p>
+  Създадено от: 
+  <a href="https://github.com/KTsonev02" target="_blank">
+    Kaloyan Tsonev
+  </a> ❤️
+</p>
+    <p>📧 Email: kaliconev@gmail.com</p>
+    <p>© 2025 Znaiko – Всички права запазени</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
