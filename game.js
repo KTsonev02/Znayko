@@ -13,8 +13,12 @@ const words = {
         {name:"Риба", img:"assets/riba.png", audio:"audio/riba.mp3", info:"Рибата живее във водата и плува. 🐟"},
 
     ],
-    "Б":[
-        {name:"Ball", img:"assets/ball.png", audio:"assets/ball.mp3", info:"Топка - за игра и забавление."}
+    "Л":[
+        {name:"Лисица", img:"assets/lisica.png", audio:"audio/lisica.mp3", info:"Лисицата е хитро животно."},
+        {name:"Лимонада", img:"assets/limonada.png", audio:"audio/limonada.mp3", info:"Лимонадата е освежаваща напитка."},
+        {name:"Лъжица", img:"assets/lachica.png", audio:"audio/lazhica.mp3", info:"Лъжица се използва за ядене."},
+        {name:"Лъв", img:"assets/lav.png", audio:"audio/lav.mp3", info:"Лъвът е голямо и силно животно."},
+        {name:"Камила", img:"assets/kamila.png", audio:"audio/kamila.mp3", info:"Камилата живее в пустинята и има гърбица."}
     ],
     "В":[
         {name:"Van", img:"assets/van.png", audio:"assets/van.mp3", info:"Камионче - превозно средство."}
@@ -25,7 +29,7 @@ const words = {
 // Аудио за самите букви
 const letterAudios = {
     "Р": "audio/r.mp3",
-    "Б": "assets/audio/letters/Б.mp3",
+    "Л": "audio/l.mp3",
     "В": "assets/audio/letters/В.mp3"
 };
 
