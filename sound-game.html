@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра – Свържи звука с животното</title>
+    <link rel="stylesheet" href="sound-game.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo-area">
+        <img src="assets/logo.png" alt="Znaiko Logo">
+        <div>
+            <h1>Znaiko</h1>
+            <p>Учим думи с картинки</p>
+        </div>
+    </div>
+    <a href="index.html"><button class="back-btn">⬅ Начало</button></a>
+</header>
+
+    <div class="instructions">
+        <h2>Как се играе?</h2>
+        <p>1. Натисни звука, за да го чуеш.</p>
+        <p>2. Дръпни картинката до съответния звук.</p>
+        <p>3. Докосни картинката в полето, за да я махнеш.</p>
+        <p>4. Натисни "Провери" за да видиш дали си познал/а!</p>
+    </div>
+
+    <div class="game-container">
+        <!-- Основна игрова зона -->
+        <div class="game-board">
+            <!-- Горен ред - звуци и полета за снимки -->
+            <div class="top-row">
+                <div class="sounds-section">
+                    <h3>Звуци</h3>
+                    <div class="sounds-container" id="sounds-container">
+                        <!-- Звуковите бутони ще се генерират тук -->
+                    </div>
+                </div>
+                
+                <div class="drop-section">
+                    <h3>Постави тук</h3>
+                    <div class="drop-container" id="drop-container">
+                        <!-- Полетата за снимки ще се генерират тук -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Долен ред - всички снимки -->
+            <div class="bottom-row">
+                <div class="images-section">
+                    <h3>Животни</h3>
+                    <div class="images-container" id="images-container">
+                        <!-- Картинките ще се генерират тук -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Контролни бутони -->
+        <div class="game-controls">
+            <button class="control-btn" id="check-btn">Провери</button>
+            <button class="control-btn reset" id="reset-btn">Нова игра</button>
+            <button class="control-btn hint" id="hint-btn">Помощ</button>
+        </div>
+        
+        <div class="score-board">
+            Резултат: <span id="score">0</span> от 9
+        </div>
+        
+        <button id="bravo-btn" class="bravo-btn">Браво! Направи всичко!</button>
+    </div>
+
+    <div class="feedback-message" id="feedback-message">
+        Браво!
+    </div>
+
+    <script src="sound-game.js"></script>
+</body>
+</html>

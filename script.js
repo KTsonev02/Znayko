@@ -11,7 +11,8 @@ updateClock();
 const slides = [
     "assets/elephant_slider.png",
     "assets/dog_slider.png",
-    "assets/cat_slider.png"
+    "assets/cat_slider.png",
+    "assets/fish_slider.png"
 ];
 let index = 0;
 
@@ -29,9 +30,9 @@ function startGame() {
 function openInfo(type) {
     const data = {
         info1: "Детето избира буква от меню. \n След избор на буква се показват картинки (предмети/животни/цветове и т.н.), които съдържат тази буква. \n Когато детето цъкне върху картинка, се пуска аудио, което казва думата.",
-        info2: "Развива внимание и логическо мислене."
+        info2: "Натисни звука, за да го чуеш. Дръпни картинката до съответния звук. Докосни картинката в полето, за да я махнеш. Натисни Провери за да видиш дали си познал/а!",
     };
-    document.getElementById("modal-text").innerText = data[type];
+    document.getElementById("modal-text").innerText = data[type];   
     document.getElementById("modal").style.display = "block";
 }
 
