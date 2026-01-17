@@ -378,7 +378,13 @@ body::before {
     transition: all 0.3s;
     border: 2px solid transparent;
     min-height: 100px;
+    min-width: 100px;
     aspect-ratio: 1/1;
+}
+
+.animal-item .animal-emoji {
+    font-size: 3.9rem;          /* беше 2rem */
+    line-height: 2;
 }
 
 .animal-item:hover:not(.placed) {
@@ -406,12 +412,9 @@ body::before {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.animal-emoji {
-    font-size: 2rem;
-}
-
 .animal-name {
-    font-size: 0.9rem;
+    padding-bottom:  5px;
+    font-size: 1.2rem;
     font-weight: bold;
     color: #2a6cb3;
     text-align: center;

@@ -6,11 +6,16 @@
 const words = {
     "Р":[
         {name:"Бор", img:"assets/bor.png", audio:"audio/bor.mp3", info:"Борът е голямо зелено дърво. 🌲"},
-        {name:"Храст", img:"assets/hrast.png", audio:"audio/hrast.mp3", info:"Храстът е ниско растение с много клонки. 🌿"},
         {name:"Река", img:"assets/reka.png", audio:"audio/reka.mp3", info:"Реката е течаща вода. 💧"},
         {name:"Трева", img:"assets/grass.png", audio:"audio/treva.mp3", info:"Тревата е зелена и мека. 🍀"},
         {name:"Рак", img:"assets/rak.png", audio:"audio/rak.mp3", info:"Ракът живее във водата и има щипки. 🦀"},
         {name:"Риба", img:"assets/riba.png", audio:"audio/riba.mp3", info:"Рибата живее във водата и плува. 🐟"},
+        {name:"Роза", img:"assets/roza.png", audio:"audio/roza.mp3", info:"Розата е красиво цвете. 🌹"},
+        {name:"Ракета", img:"assets/raketa.png", audio:"audio/raketa.mp3", info:"Ракетата лети в космоса. 🚀"},
+        {name:"Кръг", img:"assets/krug.png", audio:"audio/krug.mp3", info:"Кръгът е геометрична фигура. 🟠"},
+        {name:"Раница", img:"assets/ranica.png", audio:"audio/ranica.mp3", info:"Раницата се използва за носене на книги. 🎒"},
+        {name:"Кораб", img:"assets/korab.png", audio:"audio/korab.mp3", info:"Корабът плава по морето. 🚢"},
+        {name:"Цар", img:"assets/tsar.png", audio:"audio/tsar.mp3", info:"Царят е властелин на царство. 🏰"}
 
     ],
     "Л":[
